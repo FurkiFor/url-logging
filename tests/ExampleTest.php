@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Furkifor\LaravelLoggingUrl\Tests;
 
 use PHPUnit\Framework\TestCase;
 

@@ -1,21 +1,21 @@
-# :package_description
+# test
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/vendor_slug/package_slug.svg?style=flat-square)](https://packagist.org/packages/vendor_slug/package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/vendor_slug/package_slug/run-tests?label=tests)](https://github.com/vendor_slug/package_slug/actions?query=workflow%3ATests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/vendor_slug/package_slug/Check%20&%20fix%20styling?label=code%20style)](https://github.com/vendor_slug/package_slug/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/vendor_slug/package_slug.svg?style=flat-square)](https://packagist.org/packages/vendor_slug/package_slug)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/furkifor/laravel_logging_url.svg?style=flat-square)](https://packagist.org/packages/furkifor/laravel_logging_url)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/furkifor/laravel_logging_url/run-tests?label=tests)](https://github.com/furkifor/laravel_logging_url/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/furkifor/laravel_logging_url/Check%20&%20fix%20styling?label=code%20style)](https://github.com/furkifor/laravel_logging_url/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/furkifor/laravel_logging_url.svg?style=flat-square)](https://packagist.org/packages/furkifor/laravel_logging_url)
 
-[](delete) 1) manually replace `:author_name, :author_username, auhor@domain.com, :vendor_name, vendor_slug, Vendor Name, :package_name, package_slug, skeleton, Skeleton, :package_description` with their correct values
-[](delete) in `CHANGELOG.md LICENSE.md README.md composer.json SkeletonClass.php ExampleTest.php FUNDING.yml config.yml SECURITY.md`
-[](delete) and delete `configure-skeleton.sh`
+[](delete) 1) manually replace `furkan, FurkiFor, auhor@domain.com, FurkiFor, furkifor, Vendor Name, laravel-logging-url, laravel_logging_url, laravel_logging_url, LaravelLoggingUrl, test` with their correct values
+[](delete) in `CHANGELOG.md LICENSE.md README.md composer.json LaravelLoggingUrlClass.php ExampleTest.php FUNDING.yml config.yml SECURITY.md`
+[](delete) and delete `configure-laravel_logging_url.sh`
 
-[](delete) 2) You can also run `./configure-skeleton.sh` to do this automatically.
+[](delete) 2) You can also run `./configure-laravel_logging_url.sh` to do this automatically.
 
 This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/package-skeleton-php.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/package-skeleton-php)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/package-laravel_logging_url-php.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/package-laravel_logging_url-php)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -26,14 +26,14 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require vendor_slug/package_slug
+composer require furkifor/laravel_logging_url
 ```
 
 ## Usage
 
 ```php
-$skeleton = new VendorName\Skeleton();
-echo $skeleton->echoPhrase('Hello, VendorName!');
+$laravel_logging_url = new Furkifor\LaravelLoggingUrl();
+echo $laravel_logging_url->echoPhrase('Hello, Furkifor!');
 ```
 
 ## Testing
@@ -56,7 +56,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [furkan](https://github.com/FurkiFor)
 - [All Contributors](../../contributors)
 
 ## License

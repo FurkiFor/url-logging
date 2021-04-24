@@ -1,16 +1,16 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "furkifor/laravel_logging_url",
+    "description": "test",
     "keywords": [
-        ":vendor_name",
-        "package_slug"
+        "FurkiFor",
+        "laravel_logging_url"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/furkifor/laravel_logging_url",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "furkan",
+            "email": "furkanunsal69@gmail.com",
             "role": "Developer"
         }
     ],
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Furkifor\\LaravelLoggingUrl\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Furkifor\\LaravelLoggingUrl\\Tests\\": "tests"
         }
     },
     "scripts": {
