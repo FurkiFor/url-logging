@@ -2,8 +2,8 @@
 
 namespace MarvinLabs\DiscordLogger\Tests;
 
-use Monolog\Logger;
 use function config;
+use Monolog\Logger;
 
 class ConfigTest extends TestCase
 {

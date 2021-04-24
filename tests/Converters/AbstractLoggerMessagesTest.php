@@ -3,12 +3,12 @@
 namespace MarvinLabs\DiscordLogger\Tests\Converters;
 
 use DateTime;
+use function json_encode;
 use MarvinLabs\DiscordLogger\Contracts\RecordToMessage;
 use MarvinLabs\DiscordLogger\Tests\Support\MessageAssertions;
 use MarvinLabs\DiscordLogger\Tests\TestCase;
 use Monolog\Logger;
 use Throwable;
-use function json_encode;
 
 abstract class AbstractLoggerMessagesTest extends TestCase
 {
@@ -36,7 +36,7 @@ abstract class AbstractLoggerMessagesTest extends TestCase
         $message = $this->warning('This is a test')[0];
 
         MessageAssertions::assertMessagePartialMatch([
-            'username'   => 'John',
+            'username' => 'John',
             'avatar_url' => 'http://example.com/avatar.png',
         ], $message);
     }
@@ -44,13 +44,15 @@ abstract class AbstractLoggerMessagesTest extends TestCase
     protected function warning(string $message, array $context = [], array $extras = []): array
     {
         return $this->converter->buildMessages(
-            $this->fakeRecord(Logger::WARNING, $message, $context, $extras));
+            $this->fakeRecord(Logger::WARNING, $message, $context, $extras)
+        );
     }
 
     protected function exception(string $message, Throwable $exception): array
     {
         return $this->converter->buildMessages(
-            $this->fakeRecord(Logger::CRITICAL, $message, ['exception' => $exception]));
+            $this->fakeRecord(Logger::CRITICAL, $message, ['exception' => $exception])
+        );
     }
 
     protected function fakeRecord(string $level, string $message, array $context = [], array $extra = []): array
@@ -62,14 +64,14 @@ abstract class AbstractLoggerMessagesTest extends TestCase
         $formatted = "[2000-01-01 12:13:14] Laravel.$levelName: $message $serializedContext $serializedExtras\n";
 
         return [
-            'message'    => $message,
-            'level'      => $level,
-            'channel'    => 'Laravel',
+            'message' => $message,
+            'level' => $level,
+            'channel' => 'Laravel',
             'level_name' => $levelName,
-            'datetime'   => $timestamp,
-            'formatted'  => $formatted,
-            'extra'      => $extra,
-            'context'    => $context,
+            'datetime' => $timestamp,
+            'formatted' => $formatted,
+            'extra' => $extra,
+            'context' => $context,
         ];
     }
 }

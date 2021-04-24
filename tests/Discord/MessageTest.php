@@ -42,16 +42,17 @@ class MessageTest extends TestCase
             ->file('file content', 'example.txt');
 
         $this->assertEquals(
-            ['content'    => 'my content',
-             'username'   => 'John',
+            ['content' => 'my content',
+             'username' => 'John',
              'avatar_url' => 'avatar.url',
-             'tts'        => 'true',
-             'file'       => ['name'     => 'file',
+             'tts' => 'true',
+             'file' => ['name' => 'file',
                               'contents' => 'file content',
                               'filename' => 'example.txt',],
-             'embeds'     => [$embed->toArray(),],
+             'embeds' => [$embed->toArray(),],
             ],
-            $message->toArray());
+            $message->toArray()
+        );
     }
 
     /** @test */
@@ -64,14 +65,15 @@ class MessageTest extends TestCase
             ->file('file content', 'example.txt');
 
         $this->assertEquals(
-            ['content'    => 'my content',
-             'username'   => 'John',
+            ['content' => 'my content',
+             'username' => 'John',
              'avatar_url' => 'avatar.url',
-             'tts'        => 'false',
-             'file'       => ['name'     => 'file',
+             'tts' => 'false',
+             'file' => ['name' => 'file',
                               'contents' => 'file content',
                               'filename' => 'example.txt',],
             ],
-            $message->toArray());
+            $message->toArray()
+        );
     }
 }

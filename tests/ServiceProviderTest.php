@@ -3,7 +3,6 @@
 
 namespace MarvinLabs\DiscordLogger\Tests;
 
-
 use MarvinLabs\DiscordLogger\Contracts\DiscordWebHook;
 
 class ServiceProviderTest extends TestCase
