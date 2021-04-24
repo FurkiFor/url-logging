@@ -4,7 +4,8 @@ namespace Furkifor\LaravelLoggingUrl;
 
 class LaravelLoggingUrlClass
 {
-    public function __construct(){
+    public function __construct()
+    {
         return 'hello';
     }
 }
