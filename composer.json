@@ -1,5 +1,5 @@
 {
-    "name": "furkifor/laravel-logging-url",
+    "name": "furkifor/url-logging",
     "description": "Logging to  channel in Laravel",
     "keywords": [
       "laravel",    
@@ -29,7 +29,7 @@
     },
     "autoload": {
       "psr-4": {
-        "FurkiFor\\UrlLogging\\": "src/UrlLogging"
+        "FurkiFor\\UrlLogging\\": "src/url-logging"
       }
     },
     "autoload-dev": {
