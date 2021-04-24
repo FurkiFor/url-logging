@@ -1,7 +1,8 @@
 # Changelog
 
-All notable changes to `laravel-logging-url` will be documented in this file.
+All Notable changes to `laravel-discord-logger` will be documented in this file.
 
-## 1.0.0 - 202X-XX-XX
+## 1.0.0 - 2019/05/30
 
-- initial release
+- Initial release
+- Log to discord webhook

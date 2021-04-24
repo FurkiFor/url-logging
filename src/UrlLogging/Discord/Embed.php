@@ -47,37 +47,30 @@ class Embed implements Arrayable
 
     public function title(string $title, string $url = ''): Embed
     {
-        ;
-        $this->title = "E-rac ".$title;
+        $this->title = $title;
         $this->url = $url;
-
         return $this;
     }
 
     public function description(string $description): Embed
     {
-        $this->description = Str::limit(
-            $description,
-            DiscordWebHook::MAX_CONTENT_LENGTH - 3 /* Accounting for ellipsis */
-        );
-
+        $this->description = Str::limit($description,
+            DiscordWebHook::MAX_CONTENT_LENGTH - 3 /* Accounting for ellipsis */);
         return $this;
     }
 
     public function color(int $code): Embed
     {
         $this->color = $code;
-
         return $this;
     }
 
     public function footer(string $text, string $icon_url = ''): Embed
     {
         $this->footer = [
-            'text' => $text,
+            'text'     => $text,
             'icon_url' => $icon_url,
         ];
-
         return $this;
     }
 
@@ -91,15 +84,14 @@ class Embed implements Arrayable
     public function thumbnail(string $url): Embed
     {
         $this->thumbnail = ['url' => $url,];
-
         return $this;
     }
 
     public function author(string $name, string $url = '', string $icon_url = ''): Embed
     {
         $this->author = [
-            'name' => $name,
-            'url' => $url,
+            'name'     => $name,
+            'url'      => $url,
             'icon_url' => $icon_url,
         ];
 
@@ -109,7 +101,6 @@ class Embed implements Arrayable
     public function field(string $name, string $value, bool $inline = false): Embed
     {
         $this->fields[] = EmbedField::make($name, $value, $inline);
-
         return $this;
     }
 
@@ -117,20 +108,19 @@ class Embed implements Arrayable
     {
         return array_filter(
             [
-                'title' => $this->title,
+                'title'       => $this->title,
                 'description' => $this->description,
-                'url' => $this->url,
-                'color' => $this->color,
-                'footer' => $this->footer,
-                'image' => $this->image,
-                'thumbnail' => $this->thumbnail,
-                'author' => $this->author,
-                'fields' => $this->serializeFields(),
+                'url'         => $this->url,
+                'color'       => $this->color,
+                'footer'      => $this->footer,
+                'image'       => $this->image,
+                'thumbnail'   => $this->thumbnail,
+                'author'      => $this->author,
+                'fields'      => $this->serializeFields(),
             ],
             static function ($value) {
                 return $value !== null && $value !== [];
-            }
-        );
+            });
     }
 
     protected function serializeFields(): array

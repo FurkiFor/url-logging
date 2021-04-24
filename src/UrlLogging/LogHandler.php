@@ -2,7 +2,6 @@
 
 namespace MarvinLabs\DiscordLogger;
 
-use function class_implements;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
 use MarvinLabs\DiscordLogger\Contracts\DiscordWebHook;
@@ -11,6 +10,7 @@ use MarvinLabs\DiscordLogger\Converters\SimpleRecordConverter;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger as Monolog;
 use RuntimeException;
+use function class_implements;
 
 class LogHandler extends AbstractProcessingHandler
 {
@@ -31,9 +31,9 @@ class LogHandler extends AbstractProcessingHandler
 
     public function write(array $record): void
     {
-        foreach ($this->recordToMessage->buildMessages($record) as $message) {
-          
-           // $this->discord->send($message);
+        foreach($this->recordToMessage->buildMessages($record) as $message)
+        {
+            $this->discord->send($message);
         }
     }
 
@@ -41,13 +41,14 @@ class LogHandler extends AbstractProcessingHandler
     protected function createRecordConverter(Container $container, Repository $config): RecordToMessage
     {
         $converter = $container->make(
-            $config->get('discord-logger.converter', SimpleRecordConverter::class)
-        );
+            $config->get('discord-logger.converter', SimpleRecordConverter::class));
 
-        if (! class_implements($converter, RecordToMessage::class)) {
+        if (!class_implements($converter, RecordToMessage::class))
+        {
             throw new RuntimeException('The converter specified in the discord-logger configuration should implement the RecordToMessage interface');
         }
 
         return $converter;
     }
+
 }

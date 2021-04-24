@@ -35,19 +35,19 @@ class SimpleRecordConverter extends AbstractRecordConverter
     protected function addMessageStacktrace(Message $message, array $record): void
     {
         $stacktrace = $this->getStacktrace($record);
-        if ($stacktrace === null) {
+        if ($stacktrace === null)
+        {
             return;
         }
 
-        switch ($this->stackTraceMode($stacktrace)) {
+        switch ($this->stackTraceMode($stacktrace))
+        {
             case 'file':
                 $message->file($stacktrace, $this->getStacktraceFilename($record));
-
                 break;
 
-            case 'inline':
+            case 'inline' :
                 $message->content($message->content . "\n\n`" . $stacktrace . '`');
-
                 break;
 
             default:
