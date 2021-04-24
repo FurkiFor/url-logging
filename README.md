@@ -1,17 +1,3 @@
-# test
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/furkifor/laravel_logging_url.svg?style=flat-square)](https://packagist.org/packages/furkifor/laravel_logging_url)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/furkifor/laravel_logging_url/run-tests?label=tests)](https://github.com/furkifor/laravel_logging_url/actions?query=workflow%3ATests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/furkifor/laravel_logging_url/Check%20&%20fix%20styling?label=code%20style)](https://github.com/furkifor/laravel_logging_url/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/furkifor/laravel_logging_url.svg?style=flat-square)](https://packagist.org/packages/furkifor/laravel_logging_url)
-
-[](delete) 1) manually replace `furkan, FurkiFor, auhor@domain.com, FurkiFor, furkifor, Vendor Name, laravel-logging-url, laravel_logging_url, laravel_logging_url, LaravelLoggingUrl, test` with their correct values
-[](delete) in `CHANGELOG.md LICENSE.md README.md composer.json LaravelLoggingUrlClass.php ExampleTest.php FUNDING.yml config.yml SECURITY.md`
-[](delete) and delete `configure-laravel_logging_url.sh`
-
-[](delete) 2) You can also run `./configure-laravel_logging_url.sh` to do this automatically.
-
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
 
 ## Support us
 
