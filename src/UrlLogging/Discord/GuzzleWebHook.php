@@ -34,12 +34,13 @@ class GuzzleWebHook implements DiscordWebHook
      */
     public function send(Message $message): void
     {
-        $payload = $this->buildPayload($message);
+       
+       $payload = $this->buildPayload($message);
         $requestType = $this->requestType($message);
 
         try
         {
-            $this->http->post($this->url, [$requestType => $payload]);
+          //  $this->http->post($this->url, [$requestType => $payload]);
         }
         catch (ClientException $e)
         {
