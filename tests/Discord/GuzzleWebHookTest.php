@@ -2,17 +2,17 @@
 
 namespace MarvinLabs\DiscordLogger\Tests\Discord;
 
+use function explode;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use function json_decode;
 use MarvinLabs\DiscordLogger\Discord\GuzzleWebHook;
 use MarvinLabs\DiscordLogger\Discord\Message;
 use MarvinLabs\DiscordLogger\Tests\TestCase;
-use function explode;
-use function json_decode;
 
 class GuzzleWebHookTest extends TestCase
 {
@@ -80,8 +80,10 @@ class GuzzleWebHookTest extends TestCase
 
             $this->assertEquals('Content-Disposition: form-data; name="content"', $payload[1]['name']);
             $this->assertEquals('Content-Disposition: form-data; name="tts"', $payload[2]['name']);
-            $this->assertEquals('Content-Disposition: form-data; name="file"; filename="test.txt"',
-                $payload[3]['name']);
+            $this->assertEquals(
+                'Content-Disposition: form-data; name="file"; filename="test.txt"',
+                $payload[3]['name']
+            );
         });
     }
 }

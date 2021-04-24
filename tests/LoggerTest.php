@@ -2,12 +2,10 @@
 
 namespace MarvinLabs\DiscordLogger\Tests;
 
-use DateTime;
 use InvalidArgumentException;
 use MarvinLabs\DiscordLogger\Contracts\DiscordWebHook;
 use MarvinLabs\DiscordLogger\Logger;
 use MarvinLabs\DiscordLogger\Tests\Support\FakeDiscordWebHook;
-use RuntimeException;
 
 class LoggerTest extends TestCase
 {

@@ -24,8 +24,7 @@ class Logger
     /** @throws \Illuminate\Contracts\Container\BindingResolutionException */
     public function __invoke(array $config)
     {
-        if (empty($config['url']))
-        {
+        if (empty($config['url'])) {
             throw new InvalidArgumentException('You must set the `url` key in your discord channel configuration');
         }
 

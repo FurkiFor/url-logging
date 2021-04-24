@@ -35,24 +35,25 @@ class EmbedTest extends TestCase
             ->footer('my footer', 'footer-icon.url');
 
         $this->assertEquals(
-            ['title'       => 'my title',
+            ['title' => 'my title',
              'description' => 'my description',
-             'url'         => 'main.url',
-             'color'       => 0x123456,
-             'footer'      => ['text'     => 'my footer',
+             'url' => 'main.url',
+             'color' => 0x123456,
+             'footer' => ['text' => 'my footer',
                                'icon_url' => 'footer-icon.url',],
-             'image'       => ['url' => 'image.url'],
-             'thumbnail'   => ['url' => 'thumbnail.url'],
-             'author'      => ['name'     => 'John',
-                               'url'      => 'avatar.url',
+             'image' => ['url' => 'image.url'],
+             'thumbnail' => ['url' => 'thumbnail.url'],
+             'author' => ['name' => 'John',
+                               'url' => 'avatar.url',
                                'icon_url' => 'author-icon.url',],
-             'fields'      => [['name'   => 'first-field',
-                                'value'  => 'foo',
+             'fields' => [['name' => 'first-field',
+                                'value' => 'foo',
                                 'inline' => true,],
-                               ['name'   => 'second-field',
-                                'value'  => 'bar',
+                               ['name' => 'second-field',
+                                'value' => 'bar',
                                 'inline' => false,],],
             ],
-            $embed->toArray());
+            $embed->toArray()
+        );
     }
 }

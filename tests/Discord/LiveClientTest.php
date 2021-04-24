@@ -21,8 +21,7 @@ class LiveClientTest extends TestCase
         parent::setUp();
 
         $webHookUrl = $this->app['config']->get('logging.channels.discord.url');
-        if ($webHookUrl === null)
-        {
+        if ($webHookUrl === null) {
             // You can add that line to phpunit.xml and configure your logging.php config file accordingly
             // <server name="LOG_DISCORD_WEBHOOK_URL" value="https://discordapp.com/api/webhooks/<abc>/<xyz>"/>
             throw new SkippedTestError('Live test is ignored as you have not configured a logging channel with a real webhook');
@@ -66,7 +65,8 @@ class LiveClientTest extends TestCase
                     ->footer('I am testing the footer', 'http://lorempixel.com/100/100/transport')
                     ->field('field-1', 'foo', true)
                     ->field('field-2', 'bar', true)
-                    ->field('field-3', 'baz', false)));
+                    ->field('field-3', 'baz', false))
+        );
 
         $this->expectNotToPerformAssertions();
     }

@@ -3,7 +3,6 @@
 
 namespace MarvinLabs\DiscordLogger\Tests\Support;
 
-
 use function is_array;
 use MarvinLabs\DiscordLogger\Contracts\DiscordWebHook;
 use MarvinLabs\DiscordLogger\Discord\Message;
@@ -53,8 +52,7 @@ class FakeDiscordWebHook implements DiscordWebHook
 
     public function assertLastMessage(Message $expected)
     {
-        if ($this->lastMessageSent === null)
-        {
+        if ($this->lastMessageSent === null) {
             Assert::fail('Expecting a last message but none has been sent yet');
         }
 
@@ -63,8 +61,7 @@ class FakeDiscordWebHook implements DiscordWebHook
 
     public function assertLastMessageMatches(array $expectedSubset)
     {
-        if ($this->lastMessageSent === null)
-        {
+        if ($this->lastMessageSent === null) {
             Assert::fail('Expecting a last message but none has been sent yet');
         }
 
@@ -73,11 +70,10 @@ class FakeDiscordWebHook implements DiscordWebHook
 
     protected function assertArraySubset(array $actualArray, array $expectedSubset)
     {
-        foreach ($expectedSubset as $key => $value)
-        {
-            if (is_array($value))
-            {
+        foreach ($expectedSubset as $key => $value) {
+            if (is_array($value)) {
                 $this->assertArraySubset($actualArray[$key], $value);
+
                 continue;
             }
 

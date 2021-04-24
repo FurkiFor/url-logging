@@ -14,6 +14,7 @@ class EmbedFieldTest extends TestCase
 
         $this->assertEquals(
             ['name' => 'foo', 'value' => 'bar', 'inline' => true,],
-            $field->toArray());
+            $field->toArray()
+        );
     }
 }

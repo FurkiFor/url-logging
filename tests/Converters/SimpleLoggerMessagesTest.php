@@ -2,7 +2,6 @@
 
 namespace MarvinLabs\DiscordLogger\Tests\Converters;
 
-use DateTime;
 use Exception;
 use MarvinLabs\DiscordLogger\Contracts\RecordToMessage;
 use MarvinLabs\DiscordLogger\Converters\SimpleRecordConverter;
@@ -45,7 +44,7 @@ class SimpleLoggerMessagesTest extends AbstractLoggerMessagesTest
         $this->config->set('discord-logger.stacktrace', 'inline');
 
         $exception = new Exception();
-        $message =   $this->exception('This is a test', $exception)[0];
+        $message = $this->exception('This is a test', $exception)[0];
 
         $this->assertStringContainsString('[2000-01-01 12:13:14] Laravel.CRITICAL: This is a test', $message->content);
         $this->assertStringContainsString($exception->getTraceAsString(), $message->content);
@@ -57,7 +56,7 @@ class SimpleLoggerMessagesTest extends AbstractLoggerMessagesTest
         $this->config->set('discord-logger.stacktrace', 'file');
 
         $exception = new Exception();
-        $message =   $this->exception('This is a test', $exception)[0];
+        $message = $this->exception('This is a test', $exception)[0];
 
         $this->assertStringContainsString('[2000-01-01 12:13:14] Laravel.CRITICAL: This is a test', $message->content);
 

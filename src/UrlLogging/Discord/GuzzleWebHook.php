@@ -37,16 +37,11 @@ class GuzzleWebHook implements DiscordWebHook
         $payload = $this->buildPayload($message);
         $requestType = $this->requestType($message);
 
-        try
-        {
+        try {
             $this->http->post($this->url, [$requestType => $payload]);
-        }
-        catch (ClientException $e)
-        {
+        } catch (ClientException $e) {
             throw MessageCouldNotBeSent::serviceRespondedWithAnError($e);
-        }
-        catch (Exception $e)
-        {
+        } catch (Exception $e) {
             throw MessageCouldNotBeSent::couldNotCommunicateWithDiscord($e);
         }
     }
@@ -61,13 +56,11 @@ class GuzzleWebHook implements DiscordWebHook
      */
     protected function buildPayload(Message $message): array
     {
-        if ($this->isMessageEmpty($message))
-        {
+        if ($this->isMessageEmpty($message)) {
             throw InvalidMessage::cannotSendAnEmptyMessage();
         }
 
-        if ($this->requestType($message) === 'multipart')
-        {
+        if ($this->requestType($message) === 'multipart') {
             return $this->buildMultipartPayload($message);
         }
 
@@ -79,8 +72,7 @@ class GuzzleWebHook implements DiscordWebHook
      */
     protected function buildJsonPayload(Message $message): array
     {
-        if ($this->isMessageEmpty($message))
-        {
+        if ($this->isMessageEmpty($message)) {
             throw InvalidMessage::cannotSendAnEmptyMessage();
         }
 
@@ -92,8 +84,7 @@ class GuzzleWebHook implements DiscordWebHook
      */
     protected function buildMultipartPayload(Message $message): array
     {
-        if ($message->embeds !== null)
-        {
+        if ($message->embeds !== null) {
             throw InvalidMessage::embedsNotSupportedWithFileUploads();
         }
 

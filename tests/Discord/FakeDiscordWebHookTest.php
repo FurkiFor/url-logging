@@ -40,11 +40,11 @@ class FakeDiscordWebHookTest extends TestCase
 
         $this->discord->assertLastMessageMatches([
             'content' => 'this is a test',
-            'tts'     => 'true',
-            'embeds'  => [
+            'tts' => 'true',
+            'embeds' => [
                 0 => ['description' => 'This is an embed'],
                 2 => ['description' => 'This is a third embed',
-                      'fields'      => [
+                      'fields' => [
                           ['name' => 'foo'],
                           ['name' => 'bar'],
                       ],],
