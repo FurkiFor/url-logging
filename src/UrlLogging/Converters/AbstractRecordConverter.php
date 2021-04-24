@@ -27,19 +27,14 @@ abstract class AbstractRecordConverter implements RecordToMessage
     {
         $value = (string)$this->config->get('discord-logger.stacktrace', 'smart');
 
-        if (!in_array($value, RecordToMessage::ALLOWED_STACKTRACE_MODES, true))
-        {
+        if (! in_array($value, RecordToMessage::ALLOWED_STACKTRACE_MODES, true)) {
             throw new ConfigurationIssue("Invalid value for configuration `discord-logger.stacktrace`: $value");
         }
 
-        if ($value === 'smart')
-        {
-            if (strlen($stacktrace) < DiscordWebHook::MAX_CONTENT_LENGTH)
-            {
+        if ($value === 'smart') {
+            if (strlen($stacktrace) < DiscordWebHook::MAX_CONTENT_LENGTH) {
                 $value = 'inline';
-            }
-            else
-            {
+            } else {
                 $value = 'file';
             }
         }
@@ -50,6 +45,7 @@ abstract class AbstractRecordConverter implements RecordToMessage
     protected function getStacktraceFilename(array $record): ?string
     {
         $timestamp = $record['datetime']->format('YmdHis');
+
         return "{$timestamp}_stacktrace.txt";
     }
 
@@ -57,8 +53,7 @@ abstract class AbstractRecordConverter implements RecordToMessage
     {
         if (empty($record['context'])
             || empty($record['context']['exception'])
-            || !is_a($record['context']['exception'], Throwable::class))
-        {
+            || ! is_a($record['context']['exception'], Throwable::class)) {
             return null;
         }
 
@@ -85,8 +80,7 @@ abstract class AbstractRecordConverter implements RecordToMessage
     protected function addGenericMessageFrom(Message $message): void
     {
         $name = $this->getFromName();
-        if ($name === null)
-        {
+        if ($name === null) {
             return;
         }
 

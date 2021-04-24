@@ -16,7 +16,7 @@ class EmbedField implements Arrayable
     public $inline;
 
     /** Static factory method */
-    public static function make(string $name = '', string $value='', bool $inline = false): EmbedField
+    public static function make(string $name = '', string $value = '', bool $inline = false): EmbedField
     {
         return new self($name, $value, $inline);
     }
@@ -31,26 +31,29 @@ class EmbedField implements Arrayable
     public function name(string $name): EmbedField
     {
         $this->name = $name;
+
         return $this;
     }
 
     public function value(string $value): EmbedField
     {
         $this->value = $value;
+
         return $this;
     }
 
     public function inline(bool $inline = true): EmbedField
     {
         $this->inline = $inline;
+
         return $this;
     }
 
     public function toArray(): array
     {
         return [
-            'name'   => $this->name,
-            'value'  => $this->value,
+            'name' => $this->name,
+            'value' => $this->value,
             'inline' => $this->inline,
         ];
     }
